@@ -8,7 +8,7 @@ import (
 	"sync"
 
 	"github.com/hainguyen918/go-amqp/internal/buffer"
-	"github.com/hainguyen918/go-amqp/internal/debug"
+	// "github.com/hainguyen918/go-amqp/internal/debug"
 	"github.com/hainguyen918/go-amqp/internal/encoding"
 	"github.com/hainguyen918/go-amqp/internal/frames"
 )
@@ -440,10 +440,10 @@ Loop:
 	for {
 		var outgoingTransfers chan transferEnvelope
 		if s.l.linkCredit > 0 {
-			debug.Log(1, "TX (Sender %p) (enable): target: %q, link credit: %d, deliveryCount: %d", s, s.l.target.Address, s.l.linkCredit, s.l.deliveryCount)
+			fmt.Printf("TX (Sender %p) (enable): target: %q, link credit: %d, deliveryCount: %d", s, s.l.target.Address, s.l.linkCredit, s.l.deliveryCount)
 			outgoingTransfers = s.transfers
 		} else {
-			debug.Log(1, "TX (Sender %p) (pause): target: %q, link credit: %d, deliveryCount: %d", s, s.l.target.Address, s.l.linkCredit, s.l.deliveryCount)
+			fmt.Printf("TX (Sender %p) (pause): target: %q, link credit: %d, deliveryCount: %d", s, s.l.target.Address, s.l.linkCredit, s.l.deliveryCount)
 		}
 
 		closed := s.l.close
@@ -479,13 +479,13 @@ Loop:
 			hooks.MuxTransfer()
 			select {
 			case s.l.session.txTransfer <- env:
-				debug.Log(2, "TX (Sender %p): mux transfer to Session: %d, %s", s, s.l.session.channel, env.Frame)
+				fmt.Printf("TX (Sender %p): mux transfer to Session: %d, %s", s, s.l.session.channel, env.Frame)
 				// decrement link-credit after entire message transferred
 				if !env.Frame.More {
 					s.l.deliveryCount++
 					s.l.linkCredit--
 					// we are the sender and we keep track of the peer's link credit
-					debug.Log(3, "TX (Sender %p): link: %s, link credit: %d", s, s.l.key.name, s.l.linkCredit)
+					fmt.Printf("TX (Sender %p): link: %s, link credit: %d", s, s.l.key.name, s.l.linkCredit)
 				}
 				continue Loop
 			case <-s.l.close:
@@ -515,7 +515,7 @@ Loop:
 		case <-s.rollback:
 			s.l.deliveryCount--
 			s.l.linkCredit++
-			debug.Log(3, "TX (Sender %p): rollback link: %s, link credit: %d", s, s.l.key.name, s.l.linkCredit)
+			fmt.Printf("TX (Sender %p): rollback link: %s, link credit: %d", s, s.l.key.name, s.l.linkCredit)
 		}
 	}
 }
@@ -523,7 +523,7 @@ Loop:
 // muxHandleFrame processes fr based on type.
 // depending on the peer's RSM, it might return a disposition frame for sending
 func (s *Sender) muxHandleFrame(fr frames.FrameBody) error {
-	debug.Log(2, "RX (Sender %p): %s", s, fr)
+	fmt.Printf(2, "RX (Sender %p): %s", s, fr)
 	switch fr := fr.(type) {
 	// flow control frame
 	case *frames.PerformFlow:
@@ -557,7 +557,7 @@ func (s *Sender) muxHandleFrame(fr frames.FrameBody) error {
 
 		select {
 		case s.l.session.tx <- frameBodyEnvelope{FrameCtx: &frameContext{Ctx: context.Background()}, FrameBody: resp}:
-			debug.Log(2, "TX (Sender %p): mux frame to Session (%p): %d, %s", s, s.l.session, s.l.session.channel, resp)
+			fmt.Printf("TX (Sender %p): mux frame to Session (%p): %d, %s", s, s.l.session, s.l.session.channel, resp)
 		case <-s.l.close:
 			return nil
 		case <-s.l.session.done:
@@ -582,7 +582,7 @@ func (s *Sender) muxHandleFrame(fr frames.FrameBody) error {
 
 		select {
 		case s.l.session.tx <- frameBodyEnvelope{FrameCtx: &frameContext{Ctx: context.Background()}, FrameBody: dr}:
-			debug.Log(2, "TX (Sender %p): mux frame to Session (%p): %d, %s", s, s.l.session, s.l.session.channel, dr)
+			fmt.Printf("TX (Sender %p): mux frame to Session (%p): %d, %s", s, s.l.session, s.l.session.channel, dr)
 		case <-s.l.close:
 			return nil
 		case <-s.l.session.done:
