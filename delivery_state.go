@@ -1,6 +1,6 @@
 package amqp
 
-import "github.com/Azure/go-amqp/internal/encoding"
+import "github.com/hainguyen918/go-amqp/internal/encoding"
 
 // DeliveryState encapsulates the various concrete delivery states.
 // Use a type switch to determine the concrete delivery state.
