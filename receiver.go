@@ -8,11 +8,11 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/Azure/go-amqp/internal/buffer"
-	"github.com/Azure/go-amqp/internal/debug"
-	"github.com/Azure/go-amqp/internal/encoding"
-	"github.com/Azure/go-amqp/internal/frames"
-	"github.com/Azure/go-amqp/internal/queue"
+	"github.com/hainguyen918/go-amqp/internal/buffer"
+	"github.com/hainguyen918/go-amqp/internal/debug"
+	"github.com/hainguyen918/go-amqp/internal/encoding"
+	"github.com/hainguyen918/go-amqp/internal/frames"
+	"github.com/hainguyen918/go-amqp/internal/queue"
 )
 
 // Default link options
