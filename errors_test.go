@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	amqp "github.com/Azure/go-amqp"
+	amqp "github.com/hainguyen918/go-amqp"
 	"github.com/stretchr/testify/require"
 )
 

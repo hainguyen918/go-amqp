@@ -7,7 +7,7 @@ import (
 	"log"
 	"time"
 
-	amqp "github.com/Azure/go-amqp"
+	amqp "github.com/hainguyen918/go-amqp"
 )
 
 func Example() {

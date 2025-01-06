@@ -1,4 +1,4 @@
-PACKAGE := github.com/Azure/go-amqp
+PACKAGE := hainguyen918/go-amqp/internal
 FUZZ_DIR := ./fuzz
 
 all: test

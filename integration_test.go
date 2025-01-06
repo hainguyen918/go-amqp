@@ -14,7 +14,7 @@ import (
 	"testing"
 	"time"
 
-	amqp "github.com/Azure/go-amqp"
+	amqp "github.com/hainguyen918/go-amqp"
 	"github.com/fortytw2/leaktest"
 	"github.com/stretchr/testify/require"
 )
