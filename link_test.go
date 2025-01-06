@@ -6,12 +6,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Azure/go-amqp/internal/bitmap"
-	"github.com/Azure/go-amqp/internal/encoding"
-	"github.com/Azure/go-amqp/internal/fake"
-	"github.com/Azure/go-amqp/internal/frames"
-	"github.com/Azure/go-amqp/internal/queue"
-	"github.com/Azure/go-amqp/internal/test"
+	"github.com/hainguyen918/go-amqp/internal/bitmap"
+	"github.com/hainguyen918/go-amqp/internal/encoding"
+	"github.com/hainguyen918/go-amqp/internal/fake"
+	"github.com/hainguyen918/go-amqp/internal/frames"
+	"github.com/hainguyen918/go-amqp/internal/queue"
+	"github.com/hainguyen918/go-amqp/internal/test"
 	"github.com/stretchr/testify/require"
 )
 
