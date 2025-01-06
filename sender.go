@@ -70,6 +70,7 @@ type SendOptions struct {
 func (s *Sender) Send(ctx context.Context, msg *Message, opts *SendOptions) error {
 	// check if the link is dead.  while it's safe to call s.send
 	// in this case, this will avoid some allocations etc.
+	fmt.Println("================= \n\n\n\n INSIDE the LIBRARY \n\n\n\n\n\n\n ===========================")
 	select {
 	case <-s.l.done:
 		return s.l.doneErr
