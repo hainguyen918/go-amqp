@@ -3,7 +3,7 @@ package amqp
 import (
 	"testing"
 
-	"github.com/Azure/go-amqp/internal/buffer"
+	"github.com/hainguyen918/go-amqp/internal/buffer"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/stretchr/testify/require"
