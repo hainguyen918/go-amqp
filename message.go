@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Azure/go-amqp/internal/buffer"
-	"github.com/Azure/go-amqp/internal/encoding"
+	"github.com/hainguyen918/go-amqp/internal/buffer"
+	"github.com/hainguyen918/go-amqp/internal/encoding"
 )
 
 // Message is an AMQP message.
