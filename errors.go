@@ -1,7 +1,7 @@
 package amqp
 
 import (
-	"github.com/Azure/go-amqp/internal/encoding"
+	"github.com/hainguyen918/go-amqp/internal/encoding"
 )
 
 // ErrCond is an AMQP defined error condition.
