@@ -11,11 +11,12 @@ import (
 )
 
 var (
-	debugLevel = 1
+	debugLevel = 4
 	logger     = log.New(os.Stderr, "", log.Lmicroseconds)
 )
 
 func init() {
+	fmt.Println("\n\n\n INIT FUNCTION IS CALLED \n\n\n")
 	level, err := strconv.Atoi(os.Getenv("DEBUG_LEVEL"))
 	if err != nil {
 		return
@@ -30,6 +31,8 @@ func init() {
 func Log(level int, format string, v ...any) {
 	// print all the debug log (for testing purpose only)
 	logger.Printf(format, v...)
+	fmt.Println("\n\n\n Log FUNCTION IS CALLED \n\n\n")
+	fmt.Printf(format, v...)
 
 	if level <= debugLevel {
 		logger.Printf(format, v...)
