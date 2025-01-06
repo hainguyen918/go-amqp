@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Azure/go-amqp/internal/buffer"
+	"github.com/hainguyen918/go-amqp/internal/buffer"
 )
 
 func fuzzUnmarshal(data []byte) int {

@@ -4,7 +4,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/Azure/go-amqp/internal/buffer"
+	"github.com/hainguyen918/go-amqp/internal/buffer"
 	"github.com/stretchr/testify/require"
 )
 
