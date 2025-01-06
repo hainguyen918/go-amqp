@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/Azure/go-amqp/internal/debug"
-	"github.com/Azure/go-amqp/internal/encoding"
-	"github.com/Azure/go-amqp/internal/frames"
+	"github.com/hainguyen918/go-amqp/internal/debug"
+	"github.com/hainguyen918/go-amqp/internal/encoding"
+	"github.com/hainguyen918/go-amqp/internal/frames"
 )
 
 // SASL Mechanisms
