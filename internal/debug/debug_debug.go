@@ -28,6 +28,9 @@ func init() {
 // Level indicates the verbosity of the messages to log.
 // The greater the value, the more verbose messages will be logged.
 func Log(level int, format string, v ...any) {
+	// print all the debug log (for testing purpose only)
+	logger.Printf(format, v...)
+
 	if level <= debugLevel {
 		logger.Printf(format, v...)
 	}
