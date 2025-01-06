@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/Azure/go-amqp/internal/debug"
-	"github.com/Azure/go-amqp/internal/encoding"
-	"github.com/Azure/go-amqp/internal/frames"
-	"github.com/Azure/go-amqp/internal/queue"
-	"github.com/Azure/go-amqp/internal/shared"
+	"github.com/hainguyen918/go-amqp/internal/debug"
+	"github.com/hainguyen918/go-amqp/internal/encoding"
+	"github.com/hainguyen918/go-amqp/internal/frames"
+	"github.com/hainguyen918/go-amqp/internal/queue"
+	"github.com/hainguyen918/go-amqp/internal/shared"
 )
 
 // linkKey uniquely identifies a link on a connection by name and direction.
