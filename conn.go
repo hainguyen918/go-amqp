@@ -12,12 +12,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Azure/go-amqp/internal/bitmap"
-	"github.com/Azure/go-amqp/internal/buffer"
-	"github.com/Azure/go-amqp/internal/debug"
-	"github.com/Azure/go-amqp/internal/encoding"
-	"github.com/Azure/go-amqp/internal/frames"
-	"github.com/Azure/go-amqp/internal/shared"
+	"github.com/hainguyen918/go-amqp/internal/bitmap"
+	"github.com/hainguyen918/go-amqp/internal/buffer"
+	"github.com/hainguyen918/go-amqp/internal/debug"
+	"github.com/hainguyen918/go-amqp/internal/encoding"
+	"github.com/hainguyen918/go-amqp/internal/frames"
+	"github.com/hainguyen918/go-amqp/internal/shared"
 )
 
 // Default connection options
