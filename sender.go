@@ -523,7 +523,7 @@ Loop:
 // muxHandleFrame processes fr based on type.
 // depending on the peer's RSM, it might return a disposition frame for sending
 func (s *Sender) muxHandleFrame(fr frames.FrameBody) error {
-	fmt.Printf(2, "RX (Sender %p): %s", s, fr)
+	fmt.Printf("RX (Sender %p): %s", s, fr)
 	switch fr := fr.(type) {
 	// flow control frame
 	case *frames.PerformFlow:
