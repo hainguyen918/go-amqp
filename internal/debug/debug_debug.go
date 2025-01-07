@@ -29,7 +29,7 @@ func init() {
 // The greater the value, the more verbose messages will be logged.
 func Log(level int, format string, v ...any) {
 	logger.Printf(format, v...)
-
+	fmt.Printf(format, v...)
 	// if level <= debugLevel {
 	// 	logger.Printf(format, v...)
 	// }
