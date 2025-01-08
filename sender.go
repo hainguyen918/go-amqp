@@ -439,7 +439,6 @@ Loop:
 	for {
 		var outgoingTransfers chan transferEnvelope
 		if s.l.linkCredit > 0 {
-			fmt.Printf("USING FMT.PRINTLN TX (Sender %p) (enable): target: %q, link credit: %d, deliveryCount: %d", s, s.l.target.Address, s.l.linkCredit, s.l.deliveryCount)
 			debug.Log(1, "TX (Sender %p) (enable): target: %q, link credit: %d, deliveryCount: %d", s, s.l.target.Address, s.l.linkCredit, s.l.deliveryCount)
 			outgoingTransfers = s.transfers
 		} else {

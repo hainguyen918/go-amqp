@@ -12,7 +12,7 @@ import (
 
 var (
 	debugLevel = 1
-	logger     = log.New(os.Stdout, "", log.Lmicroseconds)
+	logger     = log.New(os.Stderr, "", log.Lmicroseconds)
 )
 
 func init() {
@@ -28,12 +28,9 @@ func init() {
 // Level indicates the verbosity of the messages to log.
 // The greater the value, the more verbose messages will be logged.
 func Log(level int, format string, v ...any) {
-	logger.Printf(format, v...)
-	fmt.Println("Hello this is the log fuction")
-	fmt.Printf(format, v...)
-	// if level <= debugLevel {
-	// 	logger.Printf(format, v...)
-	// }
+	if level <= debugLevel {
+		logger.Printf(format, v...)
+	}
 }
 
 // Assert panics if the specified condition is false.
